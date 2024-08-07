@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "gadgestry:block/pot/blade_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/brewer_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/explorer_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/miner_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/plenty_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/prize_pottery_pattern"
+      },
+      {
+        "model": "gadgestry:block/pot/clear"
+      }
+    ]
+  }
+}
