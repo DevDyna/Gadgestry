@@ -1,0 +1,6 @@
+{
+  "parent": "gadgestry:block/pot/_template_treasure_pot",
+  "textures": {
+    "side": "gadgestry:block/decorated_pot_side"
+  }
+}
