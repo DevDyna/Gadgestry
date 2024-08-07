@@ -16,5 +16,5 @@ public class TierTool {
     public static final Tier SAPPHIRE = TierSortingRegistry.registerTier(
             new ForgeTier(5, 1500, 5f, 4f, 25,
                     Tags.Blocks.NEEDS_AQUAMARINE_TOOL, () -> Ingredient.of(BasicItem.AQUAMARINE.get())),
-            new ResourceLocation(Gadgestry.MODID, "sapphire"), List.of(Tiers.NETHERITE), List.of());
+            new ResourceLocation(Gadgestry.MODID, "aquamarine"), List.of(Tiers.IRON), List.of());
 }
