@@ -17,4 +17,9 @@ public class TierTool {
             new ForgeTier(5, 500, 8f, 0f, 25,
                     Tags.Blocks.NEEDS_AQUAMARINE_TOOL, () -> Ingredient.of(BasicItem.AQUAMARINE.get())),
             new ResourceLocation(Gadgestry.MODID, "aquamarine"), List.of(Tiers.IRON), List.of());
+
+            public static final Tier ROSE_DIAMOND = TierSortingRegistry.registerTier(
+            new ForgeTier(6, 5000, 10f, 2f, 5,
+                    Tags.Blocks.NEEDS_ROSE_DIAMOND_TOOL, () -> Ingredient.of(BasicItem.ROSE_DIAMOND.get())),
+            new ResourceLocation(Gadgestry.MODID, "rose_diamond"), List.of(Tiers.NETHERITE), List.of());
 }
