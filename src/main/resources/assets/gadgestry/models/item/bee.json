@@ -2,7 +2,7 @@
     "credit": "Made with Blockbench",
 	"ambientocclusion":false,
     "textures": {
-        "0": "gadgestry:item/bee"
+        "0": "gadgestry:item/apiary/bee"
     },
     "elements": [{
             "from": [4.5, 3, 3],

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "gadgestry:item/scoop"
+    "layer0": "gadgestry:item/apiary/scoop"
   }
 }

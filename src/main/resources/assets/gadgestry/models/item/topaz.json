@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gadgestry:item/topaz"
+    "layer0": "gadgestry:item/gathering/gems/topaz"
   }
 }
