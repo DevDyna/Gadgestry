@@ -21,16 +21,13 @@
 					{
 						"type": "minecraft:block_predicate_filter",
 						"predicate": {
-							"type": "minecraft:not",
-							"predicate": {
-								"type": "minecraft:matching_blocks",
-								"offset": [
-									0,
-									-1,
-									0
-								],
-								"blocks": "minecraft:air"
-							}
+							"type": "minecraft:matching_blocks",
+							"offset": [
+								0,
+								-1,
+								0
+							],
+							"blocks": "minecraft:deepslate"
 						}
 					},
 					{
@@ -72,7 +69,7 @@
 					"absolute": -65
 				},
 				"max_inclusive": {
-					"absolute": 60
+					"absolute": 0
 				}
 			}
 		}
