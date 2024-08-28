@@ -17,7 +17,7 @@ public class BasicBlock {
                         Gadgestry.MODID);
 
         public static final RegistryObject<Block> TREASURE_POT = BLOCKS.register("treasure_pot",
-                        () -> new Pot(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT)
+                        () -> new TreasurePot(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT)
                                         .sound(SoundType.DECORATED_POT_CRACKED)));
 
         // public static final RegistryObject<Block> NEPTUNIAN_GRASS =
