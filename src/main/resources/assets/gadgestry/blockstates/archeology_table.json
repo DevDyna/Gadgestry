@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "": [{
+                "model": "gadgestry:block/archeology_table"
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "block.minecraft.deepslate_diamond_ore": "Deepslate Aqua-Diamond Ore",
+    "block.minecraft.diamond_block": "Block of Aqua-Diamond",
+    "block.minecraft.diamond_ore": "Aqua-Diamond Ore",
+
+    "item.minecraft.diamond": "Aqua-Diamond",
+    "item.minecraft.diamond_axe": "Aqua-Diamond Axe",
+    "item.minecraft.diamond_boots": "Aqua-Diamond Boots",
+    "item.minecraft.diamond_chestplate": "Aqua-Diamond Chestplate",
+    "item.minecraft.diamond_helmet": "Aqua-Diamond Helmet",
+    "item.minecraft.diamond_hoe": "Aqua-Diamond Hoe",
+    "item.minecraft.diamond_horse_armor": "Aqua-Diamond Horse Armor",
+    "item.minecraft.diamond_leggings": "Aqua-Diamond Leggings",
+    "item.minecraft.diamond_pickaxe": "Aqua-Diamond Pickaxe",
+    "item.minecraft.diamond_shovel": "Aqua-Diamond Shovel",
+    "item.minecraft.diamond_sword": "Aqua-Diamond Sword",
+    "item.minecraft.smithing_template.netherite_upgrade.base_slot_description": "Add aqua-diamond armor, weapon, or tool",
+
+    "subtitles.item.armor.equip_diamond": "Aqua-Diamond armor clangs",
+    "trim_material.minecraft.diamond": "Aqua-Diamond Material"
+}
