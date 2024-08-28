@@ -20,8 +20,9 @@ public class BasicBlock {
                         () -> new Pot(BlockBehaviour.Properties.copy(Blocks.DECORATED_POT)
                                         .sound(SoundType.DECORATED_POT_CRACKED)));
 
-        // public static final RegistryObject<Block> NEPTUNIAN_GRASS = BLOCKS.register("neptunian_grass",
-        //                 () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.CAVE_VINES)));
+        // public static final RegistryObject<Block> NEPTUNIAN_GRASS =
+        // BLOCKS.register("neptunian_grass",
+        // () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.CAVE_VINES)));
 
         public static final RegistryObject<Block> FANCY_LABORATORY_COMBINER = BLOCKS
                         .register("fancy_laboratory_combiner",
@@ -32,6 +33,10 @@ public class BasicBlock {
                         "fancy_laboratory_dissolver",
                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)
                                         .noCollission()));
+
+        public static final RegistryObject<Block> ARCHEOLOGY_TABLE = BLOCKS.register(
+                        "archeology_table",
+                        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
         public static void register(IEventBus eventBus) {
                 BLOCKS.register(eventBus);

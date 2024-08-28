@@ -67,6 +67,10 @@ public class BasicItem {
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                                         .alwaysEat().nutrition(3).saturationMod(5f).build())));
 
+        public static final RegistryObject<Item> ITEM_ARCHEOLOGY_TABLE = ITEMS.register(
+                        "archeology_table",
+                        () -> new BlockItem(BasicBlock.ARCHEOLOGY_TABLE.get(), new Item.Properties()));
+
         public static void register(IEventBus eventBus) {
                 ITEMS.register(eventBus);
         }
