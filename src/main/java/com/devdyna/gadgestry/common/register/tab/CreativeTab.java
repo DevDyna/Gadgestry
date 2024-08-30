@@ -60,7 +60,6 @@ public class CreativeTab {
                         output.accept(BasicItem.BLUE_TANZANITE.get());
                         output.accept(BasicItem.CITRINE.get());
                         output.accept(BasicItem.DARK_QUARTZ.get());
-                        output.accept(BasicItem.GREEN_GARNET.get());
                         output.accept(BasicItem.IOLITE.get());
                         output.accept(BasicItem.JADE.get());
                         output.accept(BasicItem.KUNZITE.get());

@@ -111,9 +111,6 @@ public class BasicItem {
         public static final RegistryObject<Item> DARK_QUARTZ = ITEMS.register("dark_quartz",
                         () -> new Item(new Item.Properties()));
 
-        public static final RegistryObject<Item> GREEN_GARNET = ITEMS.register("green_garnet",
-                        () -> new Item(new Item.Properties()));
-
         public static final RegistryObject<Item> IOLITE = ITEMS.register("iolite",
                         () -> new Item(new Item.Properties()));
 
