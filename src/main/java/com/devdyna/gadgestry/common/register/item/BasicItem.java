@@ -27,7 +27,10 @@ public class BasicItem {
                         () -> new Item(new Item.Properties().durability(128)));
 
         public static final RegistryObject<Item> BEEWAX = ITEMS.register("beewax",
-                        () -> new Item(new Item.Properties()));
+                        () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().alwaysEat()
+                                        .nutrition(4).saturationMod(4)
+                                        .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1000), 25)
+                                        .build())));
 
         public static final RegistryObject<Item> BEE = ITEMS.register("bee",
                         () -> new Item(new Item.Properties()));
@@ -42,15 +45,19 @@ public class BasicItem {
 
         public static final RegistryObject<Item> RESIN = ITEMS.register("resin",
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                                        .alwaysEat().nutrition(1).saturationMod(1f)
-                                        .effect(() -> new MobEffectInstance(MobEffects.WITHER, 1, 200), 75).build())));
+                                        .alwaysEat().nutrition(4).saturationMod(0.3f)
+                                        .effect(() -> new MobEffectInstance(MobEffects.WITHER, 100, 200), 75)
+                                        .build())));
 
         public static final RegistryObject<Item> PATINA = ITEMS.register("patina",
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                                        .alwaysEat().nutrition(1).saturationMod(0f)
-                                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 0, 1000), 75).build())));
+                                        .alwaysEat().nutrition(3).saturationMod(0.5f)
+                                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 1000), 75).build())));
 
         public static final RegistryObject<Item> RAW_COPPER_NUGGET = ITEMS.register("raw_copper_nugget",
+                        () -> new Item(new Item.Properties()));
+
+        public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
                         () -> new Item(new Item.Properties()));
 
         public static final RegistryObject<Item> RAW_GOLD_NUGGET = ITEMS.register("raw_gold_nugget",
@@ -79,16 +86,16 @@ public class BasicItem {
 
         // ----------//ROSE DIAMOND
         public static final RegistryObject<Item> ROSE_DIAMOND_PICKAXE = ITEMS.register("rose_diamond_pickaxe",
-                        () -> new PickaxeItem(TierTool.ROSE_DIAMOND, 2, 1, new Item.Properties()));
+                        () -> new PickaxeItem(TierTool.ROSE_DIAMOND, 1, 1, new Item.Properties()));
 
         public static final RegistryObject<Item> ROSE_DIAMOND_AXE = ITEMS.register("rose_diamond_axe",
-                        () -> new AxeItem(TierTool.ROSE_DIAMOND, 2, 1, new Item.Properties()));
+                        () -> new AxeItem(TierTool.ROSE_DIAMOND, 2, 2, new Item.Properties()));
 
         public static final RegistryObject<Item> ROSE_DIAMOND_SWORD = ITEMS.register("rose_diamond_sword",
-                        () -> new SwordItem(TierTool.ROSE_DIAMOND, 2, 1, new Item.Properties()));
+                        () -> new SwordItem(TierTool.ROSE_DIAMOND, 1, 1, new Item.Properties()));
 
         public static final RegistryObject<Item> ROSE_DIAMOND_HOE = ITEMS.register("rose_diamond_hoe",
-                        () -> new HoeItem(TierTool.ROSE_DIAMOND, 2, 1, new Item.Properties()));
+                        () -> new HoeItem(TierTool.ROSE_DIAMOND, 2, 3, new Item.Properties()));
 
         public static final RegistryObject<Item> ROSE_DIAMOND_SHOVEL = ITEMS.register("rose_diamond_shovel",
                         () -> new ShovelItem(TierTool.ROSE_DIAMOND, 2, 1, new Item.Properties()));
@@ -102,7 +109,7 @@ public class BasicItem {
         public static final RegistryObject<Item> AQUAMARINE = ITEMS.register("aquamarine",
                         () -> new Item(new Item.Properties()));
 
-        public static final RegistryObject<Item> BLUE_TANZANITE = ITEMS.register("blue_tanzanite",
+        public static final RegistryObject<Item> TANZANITE = ITEMS.register("tanzanite",
                         () -> new Item(new Item.Properties()));
 
         public static final RegistryObject<Item> CITRINE = ITEMS.register("citrine",
@@ -179,10 +186,13 @@ public class BasicItem {
 
         public static final RegistryObject<Item> ROTTEN_BALL = ITEMS.register("rotten_ball",
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                                        .alwaysEat().nutrition(2).saturationMod(2f)
+                                        .alwaysEat().nutrition(4).saturationMod(0.3f)
                                         .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 1, 200), 100).build())));
 
         public static final RegistryObject<Item> GEM_TEMPLATE = ITEMS.register("gem_template",
+                        () -> new Item(new Item.Properties()));
+
+        public static final RegistryObject<Item> IRON_ROD = ITEMS.register("iron_rod",
                         () -> new Item(new Item.Properties()));
 
         public static void register(IEventBus eventBus) {

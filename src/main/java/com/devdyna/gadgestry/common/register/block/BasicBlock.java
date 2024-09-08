@@ -4,6 +4,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -28,6 +30,12 @@ public class BasicBlock {
                         .register("fancy_laboratory_combiner",
                                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                                                         .sound(SoundType.METAL).noCollission()));
+
+        public static final RegistryObject<Block> Nylium = BLOCKS
+                        .register("nylium",
+                                        () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN)
+                                                        .strength(0.1F).sound(SoundType.MOSS)
+                                                        .pushReaction(PushReaction.DESTROY)));
 
         public static final RegistryObject<Block> FANCY_LABORATORY_DISSOLVER = BLOCKS.register(
                         "fancy_laboratory_dissolver",
