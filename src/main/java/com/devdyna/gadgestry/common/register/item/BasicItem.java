@@ -5,10 +5,9 @@ import com.devdyna.gadgestry.common.register.block.BasicBlock;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
 //import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.*;
 //import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,9 +31,8 @@ public class BasicItem {
                                         .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1000), 25)
                                         .build())));
 
-        public static final RegistryObject<Item> BEE = ITEMS.register("bee",
-                        () -> new Item(new Item.Properties()));
-
+        @SuppressWarnings("deprecation")
+        public static final RegistryObject<Item> BEE = ITEMS.register("bee_spawn_egg",() -> new SpawnEggItem(EntityType.BEE, 15582019, 4400155, new Item.Properties()));
         // -------------------------------------------------------------------//
 
         // GATHERING

@@ -10,47 +10,51 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 public class BaseVillager {
+
         public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES,
                         Gadgestry.MODID);
         public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS = DeferredRegister
                         .create(ForgeRegistries.VILLAGER_PROFESSIONS, Gadgestry.MODID);
 
-        public static final RegistryObject<PoiType> ARCHEOLOGIST_POI = POI_TYPES.register("archeologist_poi",
-                        () -> new PoiType(
-                                        ImmutableSet.copyOf(BasicBlock.ARCHEOLOGY_TABLE.get().getStateDefinition()
-                                                        .getPossibleStates()),
-                                        1, 1));
+        private static PoiType POIMAKER(Block block) {
+                return new PoiType(
+                                ImmutableSet.copyOf(block.getStateDefinition()
+                                                .getPossibleStates()),
+                                1, 1);
+        }
 
+        // POI
+        public static final RegistryObject<PoiType> ARCHEOLOGIST_POI = POI_TYPES.register("archeologist_poi",
+                        () -> POIMAKER(BasicBlock.ARCHEOLOGY_TABLE.get()));
+
+        public static final RegistryObject<PoiType> BEEKEEPER_POI = POI_TYPES.register("beekeeper_poi",
+                        () -> POIMAKER(Blocks.HONEYCOMB_BLOCK));
+
+        public static final RegistryObject<PoiType> ECCENTRIC_POI = POI_TYPES.register("eccentric_poi",
+                        () -> POIMAKER(Blocks.TNT));
+
+        // VILLAGER PROFESSIONS
         public static final RegistryObject<VillagerProfession> ARCHEOLOGIST = VILLAGER_PROFESSIONS
                         .register("archeologist", () -> new VillagerProfession("archeologist",
                                         holder -> holder.get() == ARCHEOLOGIST_POI.get(),
                                         holder -> holder.get() == ARCHEOLOGIST_POI.get(),
                                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_ARMORER));
 
-        public static final RegistryObject<PoiType> INTELLECTUAL_POI = POI_TYPES.register("intellectual_poi",
-                        () -> new PoiType(ImmutableSet.of(Blocks.PISTON.defaultBlockState()), 1, 1));
-        
-        
-        public static final RegistryObject<VillagerProfession> INTELLECTUAL = VILLAGER_PROFESSIONS
-                        .register("intellectual", () -> new VillagerProfession("intellectual",
-                                        holder -> holder.get() == INTELLECTUAL_POI.get(),
-                                        holder -> holder.get() == INTELLECTUAL_POI.get(),
-                                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ANVIL_PLACE));
+        public static final RegistryObject<VillagerProfession> ECCENTRIC = VILLAGER_PROFESSIONS
+                        .register("eccentric", () -> new VillagerProfession("eccentric",
+                                        holder -> holder.get() == ECCENTRIC_POI.get(),
+                                        holder -> holder.get() == ECCENTRIC_POI.get(),
+                                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.TNT_PRIMED));
 
-                                        public static final RegistryObject<PoiType> BEEKEEPER_POI = POI_TYPES.register("beekeeper_poi",
-                                        () -> new PoiType(ImmutableSet.of(Blocks.BEEHIVE.defaultBlockState()), 1, 1));
-                        
-                        
-                        public static final RegistryObject<VillagerProfession> BEEKEEPER = VILLAGER_PROFESSIONS
-                                        .register("beekeeper", () -> new VillagerProfession("beekeeper",
-                                                        holder -> holder.get() == BEEKEEPER_POI.get(),
-                                                        holder -> holder.get() == BEEKEEPER_POI.get(),
-                                                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.BEEHIVE_WORK));
-                
+        public static final RegistryObject<VillagerProfession> BEEKEEPER = VILLAGER_PROFESSIONS
+                        .register("beekeeper", () -> new VillagerProfession("beekeeper",
+                                        holder -> holder.get() == BEEKEEPER_POI.get(),
+                                        holder -> holder.get() == BEEKEEPER_POI.get(),
+                                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.BEEHIVE_WORK));
 
         public static void register(IEventBus eventBus) {
                 POI_TYPES.register(eventBus);
