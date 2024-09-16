@@ -167,6 +167,14 @@ public class BasicItem {
                         "termite",
                         () -> new BlockItem(BasicBlock.TERMITE.get(), new Item.Properties()));
 
+                        public static final RegistryObject<Item> ITEM_STATUE_1 = ITEMS.register(
+                                "statue_1",
+                                () -> new BlockItem(BasicBlock.STATUE_1.get(), new Item.Properties()));
+
+                                public static final RegistryObject<Item> ITEM_STATUE_2 = ITEMS.register(
+                                        "statue_2",
+                                        () -> new BlockItem(BasicBlock.STATUE_2.get(), new Item.Properties()));
+
         // -------------------------------------------------------------------//
 
         // TO DO - NOT YET COMPLETLY IMPLEMENTED

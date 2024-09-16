@@ -33,9 +33,10 @@ public class BasicBlock {
 
         public static final RegistryObject<Block> TERMITE = BLOCKS
                         .register("termite",
-                                        () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN)
-                                                        .strength(0.1F).sound(SoundType.MOSS)
-                                                        .pushReaction(PushReaction.DESTROY)));
+                                        () -> new TermiteBlock(
+                                                        BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN)
+                                                                        .strength(0.1F).sound(SoundType.MOSS)
+                                                                        .pushReaction(PushReaction.DESTROY)));
 
         public static final RegistryObject<Block> FANCY_LABORATORY_DISSOLVER = BLOCKS.register(
                         "fancy_laboratory_dissolver",
@@ -44,6 +45,14 @@ public class BasicBlock {
 
         public static final RegistryObject<Block> ARCHEOLOGY_TABLE = BLOCKS.register(
                         "archeology_table",
+                        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+        public static final RegistryObject<Block> STATUE_1 = BLOCKS.register(
+                        "statue_1",
+                        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+        public static final RegistryObject<Block> STATUE_2 = BLOCKS.register(
+                        "statue_2",
                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
         public static void register(IEventBus eventBus) {
