@@ -23,7 +23,7 @@ public class BasicItem {
         // APIARY
         // -------------------------------------------------------------------//
         public static final RegistryObject<Item> SCOOP = ITEMS.register("scoop",
-                        () -> new Item(new Item.Properties().durability(128)));
+                        () -> new ScoopItem(new Item.Properties()));
 
         public static final RegistryObject<Item> BEEWAX = ITEMS.register("beewax",
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder().fast().alwaysEat()
@@ -31,8 +31,11 @@ public class BasicItem {
                                         .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1000), 25)
                                         .build())));
 
+        
+
         @SuppressWarnings("deprecation")
-        public static final RegistryObject<Item> BEE = ITEMS.register("bee_spawn_egg",() -> new SpawnEggItem(EntityType.BEE, 15582019, 4400155, new Item.Properties()));
+        public static final RegistryObject<Item> BEE = ITEMS.register("bee",
+                        () -> new SpawnEggItem(EntityType.BEE, 15582019, 4400155, new Item.Properties()));
         // -------------------------------------------------------------------//
 
         // GATHERING
@@ -50,7 +53,8 @@ public class BasicItem {
         public static final RegistryObject<Item> PATINA = ITEMS.register("patina",
                         () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                                         .alwaysEat().nutrition(3).saturationMod(0.5f)
-                                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 1000), 75).build())));
+                                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 100, 1000), 75)
+                                        .build())));
 
         public static final RegistryObject<Item> RAW_COPPER_NUGGET = ITEMS.register("raw_copper_nugget",
                         () -> new Item(new Item.Properties()));
@@ -158,6 +162,10 @@ public class BasicItem {
         public static final RegistryObject<Item> ITEM_ARCHEOLOGY_TABLE = ITEMS.register(
                         "archeology_table",
                         () -> new BlockItem(BasicBlock.ARCHEOLOGY_TABLE.get(), new Item.Properties()));
+
+        public static final RegistryObject<Item> ITEM_TERMITE = ITEMS.register(
+                        "termite",
+                        () -> new BlockItem(BasicBlock.TERMITE.get(), new Item.Properties()));
 
         // -------------------------------------------------------------------//
 
