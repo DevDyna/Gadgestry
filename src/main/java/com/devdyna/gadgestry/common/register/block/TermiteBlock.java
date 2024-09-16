@@ -38,11 +38,11 @@ public class TermiteBlock extends Block {
         };
 
         for (BlockPos position : dir) {
-            if (Calc.rnd25() && !world.getBlockState(position).isAir()) {
+            if (!world.getBlockState(position).isAir()) {
                 world.setBlockAndUpdate(pos, termite);
                 break;
             }
-             if (Calc.rnd50()) {
+             if (Calc.rnd75()) {
                 world.setBlock(pos, air, UPDATE_ALL);
                 break;
             }
