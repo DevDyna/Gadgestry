@@ -31,8 +31,8 @@ public class BasicBlock {
                                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                                                         .sound(SoundType.METAL).noCollission()));
 
-        public static final RegistryObject<Block> Nylium = BLOCKS
-                        .register("nylium",
+        public static final RegistryObject<Block> TERMITE = BLOCKS
+                        .register("termite",
                                         () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN)
                                                         .strength(0.1F).sound(SoundType.MOSS)
                                                         .pushReaction(PushReaction.DESTROY)));
