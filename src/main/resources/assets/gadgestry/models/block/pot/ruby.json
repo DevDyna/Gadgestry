@@ -1,6 +1,0 @@
-{
-  "parent": "gadgestry:block/pot/_template_treasure_pot",
-  "textures": {
-    "side": "gadgestry:block/pot_design/ruby"
-  }
-}
