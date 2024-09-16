@@ -29,7 +29,7 @@ public class TermiteBlock extends Block {
         BlockState air = TypeFest.getBlockState("minecraft:air");
 
         BlockPos[] dir = {
-                pos.above(),
+                //pos.above(),
                 pos.below(),
                 pos.east(),
                 pos.west(),
