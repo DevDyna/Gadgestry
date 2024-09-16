@@ -1,3 +1,3 @@
 @echo off
 cd ..
-gradlew build
+.\gradlew build
