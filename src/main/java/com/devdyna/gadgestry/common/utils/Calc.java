@@ -21,4 +21,8 @@ public class Calc {
     public static boolean rnd25() {
         return Math.random() < 0.25;
     }
+
+    public static boolean rnd99() {
+        return Math.random() < 0.99;
+    }
 }
