@@ -1,5 +1,7 @@
 package com.devdyna.gadgestry.common.utils;
 
+import com.devdyna.gadgestry.Gadgestry;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +27,15 @@ public class TypeFest {
     public static ItemStack getItemStack(String name) {
         return new ItemStack(ForgeRegistries.ITEMS.getValue(
                 new ResourceLocation(name)));
+    }
+
+    public static BlockState getModBlock(String name){
+        return getBlockbyMod(Gadgestry.MODID, name);
+    }
+
+    public static BlockState getBlockbyMod(String modname,String name){
+        return ForgeRegistries.BLOCKS.getValue(
+            new ResourceLocation(modname+":"+name)).defaultBlockState();
     }
 
 }

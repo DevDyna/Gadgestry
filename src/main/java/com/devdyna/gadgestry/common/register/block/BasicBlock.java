@@ -4,7 +4,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,12 +30,21 @@ public class BasicBlock {
                                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                                                         .sound(SoundType.METAL).noCollission()));
 
-        public static final RegistryObject<Block> TERMITE = BLOCKS
-                        .register("termite",
-                                        () -> new TermiteBlock(
-                                                        BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN)
-                                                                        .strength(0.1F).sound(SoundType.MOSS)
-                                                                        .pushReaction(PushReaction.DESTROY)));
+        public static final RegistryObject<Block> NULLSTONE = BLOCKS
+                        .register("nullstone",
+                                        () -> new NullBlock(
+                                                        BlockBehaviour.Properties.of()
+                                                                        .strength(1F).sound(SoundType.SCULK_CATALYST)
+                                                                        .pushReaction(PushReaction.DESTROY)
+                                                                        .randomTicks()));
+
+        public static final RegistryObject<Block> SEMI_NULLSTONE = BLOCKS
+                        .register("semi_nullstone",
+                                        () -> new NullBlock(
+                                                        BlockBehaviour.Properties.of()
+                                                                        .strength(1F).sound(SoundType.SCULK_CATALYST)
+                                                                        .pushReaction(PushReaction.DESTROY)
+                                                                        .randomTicks()));
 
         public static final RegistryObject<Block> FANCY_LABORATORY_DISSOLVER = BLOCKS.register(
                         "fancy_laboratory_dissolver",

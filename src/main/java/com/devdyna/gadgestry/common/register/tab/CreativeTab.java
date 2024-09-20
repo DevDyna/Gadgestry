@@ -94,7 +94,8 @@ public class CreativeTab {
                         output.accept(BasicItem.ITEM_FANCY_LABORATORY_COMBINER.get());
                         output.accept(BasicItem.ITEM_FANCY_LABORATORY_DISSOLVER.get());
                         output.accept(BasicItem.ITEM_ARCHEOLOGY_TABLE.get());
-                        output.accept(BasicItem.ITEM_TERMITE.get());
+                        output.accept(BasicItem.ITEM_NULLSTONE.get());
+                        output.accept(BasicItem.ITEM_SEMI_NULLSTONE.get());
                         output.accept(BasicItem.ITEM_STATUE_1.get());
                         output.accept(BasicItem.ITEM_STATUE_2.get());
 

@@ -163,9 +163,13 @@ public class BasicItem {
                         "archeology_table",
                         () -> new BlockItem(BasicBlock.ARCHEOLOGY_TABLE.get(), new Item.Properties()));
 
-        public static final RegistryObject<Item> ITEM_TERMITE = ITEMS.register(
-                        "termite",
-                        () -> new BlockItem(BasicBlock.TERMITE.get(), new Item.Properties()));
+        public static final RegistryObject<Item> ITEM_NULLSTONE = ITEMS.register(
+                        "nullstone",
+                        () -> new BlockItem(BasicBlock.NULLSTONE.get(), new Item.Properties()));
+
+                        public static final RegistryObject<Item> ITEM_SEMI_NULLSTONE = ITEMS.register(
+                                "semi_nullstone",
+                                () -> new BlockItem(BasicBlock.SEMI_NULLSTONE.get(), new Item.Properties()));
 
                         public static final RegistryObject<Item> ITEM_STATUE_1 = ITEMS.register(
                                 "statue_1",

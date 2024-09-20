@@ -1,16 +1,17 @@
 package com.devdyna.gadgestry.common.register.block;
 
-import com.devdyna.gadgestry.common.utils.Calc;
 import com.devdyna.gadgestry.common.utils.TypeFest;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class TermiteBlock extends Block {
+public class NullBlock extends Block {
 
-    public TermiteBlock(Properties pProperties) {
+    public NullBlock(Properties pProperties) {
         super(pProperties);
     }
 
@@ -20,31 +21,27 @@ public class TermiteBlock extends Block {
         return true;
     }
 
-
     @SuppressWarnings("null")
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource rand) {
 
-        BlockState termite = TypeFest.getBlockState("gadgestry:termite");
-        BlockState air = TypeFest.getBlockState("minecraft:air");
-
-        BlockPos[] dir = {
-                //pos.above(),
+        BlockPos[] all = {
                 pos.below(),
-                pos.east(),
+                pos.above(),
                 pos.west(),
-                pos.north(),
-                pos.south()
+                pos.east(),
+                pos.south(),
+                pos.north()
         };
 
-        for (BlockPos position : dir) {
-            if (!world.getBlockState(position).isAir()) {
-                world.setBlockAndUpdate(pos, termite);
-                break;
-            }
-             if (Calc.rnd75()) {
-                world.setBlock(pos, air, UPDATE_ALL);
-                break;
+        for (BlockPos position : all) {
+            BlockState block = world.getBlockState(position);
+            if (!block.is(BlockTags.FEATURES_CANNOT_REPLACE)) {
+
+                if (block.is(Blocks.END_STONE)) {
+                    world.setBlock(pos, TypeFest.getModBlock("nullstone"), UPDATE_ALL);
+                    world.setBlock(position, TypeFest.getModBlock("semi_nullstone"), UPDATE_ALL);
+                }
             }
         }
 
