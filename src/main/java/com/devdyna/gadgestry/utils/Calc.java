@@ -1,4 +1,4 @@
-package com.devdyna.gadgestry.common.utils;
+package com.devdyna.gadgestry.utils;
 
 public class Calc {
 

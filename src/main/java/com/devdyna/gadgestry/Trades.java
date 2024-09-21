@@ -1,4 +1,4 @@
-package com.devdyna.gadgestry.common;
+package com.devdyna.gadgestry;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -7,10 +7,9 @@ import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraft.world.item.Item;
-import com.devdyna.gadgestry.Gadgestry;
 
 @Mod.EventBusSubscriber(modid = Gadgestry.MODID)
-public class ModEvents {
+public class Trades {
 
     public MerchantOffer EmeToItem(Item item, int EMERALD, int ITEM) {
         return new MerchantOffer(

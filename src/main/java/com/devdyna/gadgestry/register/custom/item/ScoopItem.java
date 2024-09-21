@@ -1,11 +1,10 @@
-package com.devdyna.gadgestry.common.register.item;
+package com.devdyna.gadgestry.register.custom.item;
+
+import com.devdyna.gadgestry.utils.TypeFest;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-
-import com.devdyna.gadgestry.common.utils.TypeFest;
-
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;

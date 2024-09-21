@@ -1,4 +1,4 @@
-package com.devdyna.gadgestry.common.register.block;
+package com.devdyna.gadgestry.register.custom.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

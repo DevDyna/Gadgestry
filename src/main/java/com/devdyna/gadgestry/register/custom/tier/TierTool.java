@@ -1,4 +1,4 @@
-package com.devdyna.gadgestry.common.register.item;
+package com.devdyna.gadgestry.register.custom.tier;
 
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
@@ -8,7 +8,8 @@ import net.minecraftforge.common.ForgeTier;
 import java.util.List;
 
 import com.devdyna.gadgestry.Gadgestry;
-import com.devdyna.gadgestry.common.Tags;
+import com.devdyna.gadgestry.Tags;
+import com.devdyna.gadgestry.register.basic.BasicItem;
 import net.minecraftforge.common.TierSortingRegistry;
 
 public class TierTool {

@@ -1,15 +1,19 @@
-package com.devdyna.gadgestry.common.register.block;
+package com.devdyna.gadgestry.register.custom.block;
 
-import com.devdyna.gadgestry.common.utils.TypeFest;
+import com.devdyna.gadgestry.utils.Calc;
+import com.devdyna.gadgestry.utils.TypeFest;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class NullBlock extends Block {
+
+    public int min = 4;
+    public int max = 16;
 
     public NullBlock(Properties pProperties) {
         super(pProperties);
@@ -34,15 +38,27 @@ public class NullBlock extends Block {
                 pos.north()
         };
 
-        for (BlockPos position : all) {
-            BlockState block = world.getBlockState(position);
-            if (!block.is(BlockTags.FEATURES_CANNOT_REPLACE)) {
+        int chance = (int) Calc.rnd((double) min, (double) max);
+        int invalid_sides = 0;
 
-                if (block.is(Blocks.END_STONE)) {
-                    world.setBlock(pos, TypeFest.getModBlock("nullstone"), UPDATE_ALL);
-                    world.setBlock(position, TypeFest.getModBlock("semi_nullstone"), UPDATE_ALL);
+        for (int i = 0; i < chance; i++) {
+
+            for (BlockPos nextpos : all) {
+
+                // BlockState actual = world.getBlockState(pos);
+                BlockState next = world.getBlockState(nextpos);
+                if (Calc.rnd50() && next.is(Blocks.END_STONE)) {
+                    world.setBlock(nextpos, TypeFest.getModBlock("nullstone"), UPDATE_ALL);
+                    pos = nextpos;
+                } else {
+                    invalid_sides++;
                 }
+
             }
+            if (invalid_sides == 6) {
+                break;
+            }
+
         }
 
     }

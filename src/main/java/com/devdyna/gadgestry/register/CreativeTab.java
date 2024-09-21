@@ -1,6 +1,8 @@
-package com.devdyna.gadgestry.common.register.tab;
+package com.devdyna.gadgestry.register;
 
 import com.devdyna.gadgestry.Gadgestry;
+import com.devdyna.gadgestry.register.basic.*;
+
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -10,8 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-
-import com.devdyna.gadgestry.common.register.item.BasicItem;
 
 public class CreativeTab {
 

@@ -1,9 +1,8 @@
-package com.devdyna.gadgestry.common;
+package com.devdyna.gadgestry;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import com.devdyna.gadgestry.Gadgestry;
 import net.minecraft.world.level.block.Block;
 
 public class Tags {

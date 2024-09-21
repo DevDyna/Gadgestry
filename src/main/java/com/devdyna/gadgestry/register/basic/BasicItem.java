@@ -1,7 +1,6 @@
-package com.devdyna.gadgestry.common.register.item;
+package com.devdyna.gadgestry.register.basic;
 
 import com.devdyna.gadgestry.Gadgestry;
-import com.devdyna.gadgestry.common.register.block.BasicBlock;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,6 +9,9 @@ import net.minecraft.world.food.FoodProperties;
 //import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.*;
 //import net.minecraft.world.item.Tiers;
+import com.devdyna.gadgestry.register.custom.item.ScoopItem;
+import com.devdyna.gadgestry.register.custom.tier.TierTool;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

@@ -1,4 +1,4 @@
-package com.devdyna.gadgestry.common.register.block;
+package com.devdyna.gadgestry.register.basic;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import com.devdyna.gadgestry.Gadgestry;
+import com.devdyna.gadgestry.register.custom.block.*;
 
 public class BasicBlock {
 

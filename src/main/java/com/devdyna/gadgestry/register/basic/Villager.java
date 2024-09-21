@@ -1,7 +1,6 @@
-package com.devdyna.gadgestry.common.register.entities.npc;
+package com.devdyna.gadgestry.register.basic;
 
 import com.devdyna.gadgestry.Gadgestry;
-import com.devdyna.gadgestry.common.register.block.BasicBlock;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
@@ -13,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-public class BaseVillager {
+public class Villager {
 
         public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES,
                         Gadgestry.MODID);
