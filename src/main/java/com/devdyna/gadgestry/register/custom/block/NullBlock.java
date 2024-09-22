@@ -4,6 +4,7 @@ import com.devdyna.gadgestry.utils.Calc;
 import com.devdyna.gadgestry.utils.TypeFest;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class NullBlock extends Block {
 
-    public int min = 4;
+    public int min = 8;
     public int max = 16;
 
     public NullBlock(Properties pProperties) {
@@ -28,28 +29,27 @@ public class NullBlock extends Block {
     @SuppressWarnings("null")
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource rand) {
-
-        BlockPos[] all = {
-                pos.below(),
-                pos.above(),
-                pos.west(),
-                pos.east(),
-                pos.south(),
-                pos.north()
+        int[][] all = {
+                { 0, 0, 1 },
+                { 0, 1, 0 },
+                { 0, 1, 1 },
+                { 1, 0, 0 },
+                { 1, 0, 1 },
+                { 1, 1, 0 },
+                { 1, 1, 1 }
         };
 
-        int chance = (int) Calc.rnd((double) min, (double) max);
+        int chance = Calc.rnd(min, max);
         int invalid_sides = 0;
-
         for (int i = 0; i < chance; i++) {
 
-            for (BlockPos nextpos : all) {
-
-                // BlockState actual = world.getBlockState(pos);
-                BlockState next = world.getBlockState(nextpos);
+            for (int[] nextpos : all) {
+                BlockPos newpos = pos
+                        .offset(new Vec3i(pos.getX() + nextpos[0], pos.getY() + nextpos[1], pos.getZ() + nextpos[2]));
+                BlockState next = world.getBlockState(newpos);
                 if (Calc.rnd50() && next.is(Blocks.END_STONE)) {
-                    world.setBlock(nextpos, TypeFest.getModBlock("nullstone"), UPDATE_ALL);
-                    pos = nextpos;
+
+                    world.setBlock(newpos, TypeFest.getModBlock("semi_nullstone"), UPDATE_ALL);
                 } else {
                     invalid_sides++;
                 }

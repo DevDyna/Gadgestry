@@ -90,15 +90,15 @@ public class CreativeTab {
                     .icon(() -> new ItemStack(BasicItem.ITEM_FANCY_LABORATORY_DISSOLVER.get()))
                     .title(Component.translatable("tab.gadgestry.blockitem.name"))
                     .displayItems((parameters, output) -> {
+                        
                         output.accept(BasicItem.ITEM_TREASURE_POT.get());
                         output.accept(BasicItem.ITEM_FANCY_LABORATORY_COMBINER.get());
                         output.accept(BasicItem.ITEM_FANCY_LABORATORY_DISSOLVER.get());
                         output.accept(BasicItem.ITEM_ARCHEOLOGY_TABLE.get());
                         output.accept(BasicItem.ITEM_NULLSTONE.get());
                         output.accept(BasicItem.ITEM_SEMI_NULLSTONE.get());
-                        output.accept(BasicItem.ITEM_STATUE_1.get());
-                        output.accept(BasicItem.ITEM_STATUE_2.get());
-
+                        output.accept(BasicItem.ITEM_STATUE_CAT.get());
+                        
                     }).build());
 
     public static void register(IEventBus eventBus) {

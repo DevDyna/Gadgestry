@@ -33,8 +33,6 @@ public class BasicItem {
                                         .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 1000), 25)
                                         .build())));
 
-        
-
         @SuppressWarnings("deprecation")
         public static final RegistryObject<Item> BEE = ITEMS.register("bee",
                         () -> new SpawnEggItem(EntityType.BEE, 15582019, 4400155, new Item.Properties()));
@@ -149,6 +147,7 @@ public class BasicItem {
 
         // BLOCK-ITEMS
         // -------------------------------------------------------------------//
+        
 
         public static final RegistryObject<Item> ITEM_TREASURE_POT = ITEMS.register("treasure_pot",
                         () -> new BlockItem(BasicBlock.TREASURE_POT.get(), new Item.Properties()));
@@ -169,17 +168,13 @@ public class BasicItem {
                         "nullstone",
                         () -> new BlockItem(BasicBlock.NULLSTONE.get(), new Item.Properties()));
 
-                        public static final RegistryObject<Item> ITEM_SEMI_NULLSTONE = ITEMS.register(
-                                "semi_nullstone",
-                                () -> new BlockItem(BasicBlock.SEMI_NULLSTONE.get(), new Item.Properties()));
+        public static final RegistryObject<Item> ITEM_SEMI_NULLSTONE = ITEMS.register(
+                        "semi_nullstone",
+                        () -> new BlockItem(BasicBlock.SEMI_NULLSTONE.get(), new Item.Properties()));
 
-                        public static final RegistryObject<Item> ITEM_STATUE_1 = ITEMS.register(
-                                "statue_1",
-                                () -> new BlockItem(BasicBlock.STATUE_1.get(), new Item.Properties()));
-
-                                public static final RegistryObject<Item> ITEM_STATUE_2 = ITEMS.register(
-                                        "statue_2",
-                                        () -> new BlockItem(BasicBlock.STATUE_2.get(), new Item.Properties()));
+        public static final RegistryObject<Item> ITEM_STATUE_CAT = ITEMS.register(
+                        "statue_cat",
+                        () -> new BlockItem(BasicBlock.STATUE_CAT.get(), new Item.Properties()));
 
         // -------------------------------------------------------------------//
 
