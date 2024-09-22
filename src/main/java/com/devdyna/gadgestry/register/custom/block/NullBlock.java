@@ -4,7 +4,6 @@ import com.devdyna.gadgestry.utils.Calc;
 import com.devdyna.gadgestry.utils.TypeFest;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
@@ -38,18 +37,20 @@ public class NullBlock extends Block {
                 { 1, 1, 0 },
                 { 1, 1, 1 }
         };
+        int x = pos.getX(), y = pos.getY(), z = pos.getZ();
 
         int chance = Calc.rnd(min, max);
         int invalid_sides = 0;
         for (int i = 0; i < chance; i++) {
 
             for (int[] nextpos : all) {
-                BlockPos newpos = pos
-                        .offset(new Vec3i(pos.getX() + nextpos[0], pos.getY() + nextpos[1], pos.getZ() + nextpos[2]));
-                BlockState next = world.getBlockState(newpos);
-                if (Calc.rnd50() && next.is(Blocks.END_STONE)) {
 
-                    world.setBlock(newpos, TypeFest.getModBlock("semi_nullstone"), UPDATE_ALL);
+                BlockState next = world.getBlockState(pos.offset(x + nextpos[0], y + nextpos[1], z + nextpos[2]));
+                if (next.is(Blocks.END_STONE)) {
+                    x += nextpos[0];
+                    y += nextpos[1];
+                    z += nextpos[2];
+                    world.setBlock(pos.offset(x, y, z), TypeFest.getModBlock("semi_nullstone"), UPDATE_ALL);
                 } else {
                     invalid_sides++;
                 }
