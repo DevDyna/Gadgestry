@@ -41,11 +41,10 @@ public class BasicBlock {
 
         public static final RegistryObject<Block> SEMI_NULLSTONE = BLOCKS
                         .register("semi_nullstone",
-                                        () -> new NullBlock(
+                                        () -> new Block(
                                                         BlockBehaviour.Properties.of()
                                                                         .strength(1F).sound(SoundType.SCULK_CATALYST)
-                                                                        .pushReaction(PushReaction.DESTROY)
-                                                                        .randomTicks()));
+                                                                        .pushReaction(PushReaction.DESTROY)));
 
         public static final RegistryObject<Block> FANCY_LABORATORY_DISSOLVER = BLOCKS.register(
                         "fancy_laboratory_dissolver",
@@ -56,13 +55,9 @@ public class BasicBlock {
                         "archeology_table",
                         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
-        public static final RegistryObject<Block> STATUE_1 = BLOCKS.register(
+        public static final RegistryObject<Block> STATUE_CAT = BLOCKS.register(
                         "statue_1",
-                        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
-
-        public static final RegistryObject<Block> STATUE_2 = BLOCKS.register(
-                        "statue_2",
-                        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+                        () -> new StatueBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
         public static void register(IEventBus eventBus) {
                 BLOCKS.register(eventBus);

@@ -10,6 +10,10 @@ public class Calc {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    public static int rnd(int min, int max) {
+        return (int)Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     public static boolean rnd50() {
         return Math.random() < 0.5;
     }
